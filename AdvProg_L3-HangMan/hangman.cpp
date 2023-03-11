@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cctype>
 #include "hangman.h"
 
 using std::string;
@@ -18,7 +17,7 @@ using std::cin;
 int generateRandomNumber(const int min, const int max)
 {
     // TODO: Return a random integer number between min and max
-    return (rand%(max - min +1))+ min;
+    return rand() %(max - min +1)+ min;
 }
 
 vector<string> readWordListFromFile(const string& filePath)
