@@ -169,12 +169,12 @@ void processData(const char ch, const string& word,
     {
         if(ch == word[i])
             {
-            updateSecretWord(string& secretWord, const char ch, const string& word);
-            updateEnteredChars(const char ch, string& chars);
+            updateSecretWord(secretWord, ch, word);
+            updateEnteredChars(ch,  correctChars);
             }
         else
-            updateIncorrectGuess(int& incorrectGuess);
-            updateEnteredChars(const char ch, string& chars);
+            updateIncorrectGuess( incorrectGuess);
+            updateEnteredChars( ch,  correctChars);
 
 
     }
