@@ -1,4 +1,5 @@
 #include "simpleai.h"
+
 int readMaxGuess()
 {
     int maxGuess;
@@ -6,6 +7,7 @@ int readMaxGuess()
     cin >> maxGuess;
     return maxGuess;
 }
+
 int readWordLen()
 {
     int wordLen;
@@ -14,6 +16,7 @@ int readWordLen()
     return wordLen;
 
 }
+
 /***
     Args:
         wordLen (int): The desired length of input word
@@ -38,6 +41,7 @@ vector<string> filterWordsByLen(int wordLen, const vector<string>& vocabulary)
     Returns:
         answer (char) : The next character given the provided word is not in the vocabulary
 ***/
+
 char nextCharWhenWordIsNotInDictionary(const set<char>& selectedChars)
 {
     char answer;
@@ -52,6 +56,7 @@ char nextCharWhenWordIsNotInDictionary(const set<char>& selectedChars)
     Returns:
         answer (map) : The map which count the occurences of character in the set of candidate words
 ***/
+
 map<char, int> countOccurrences(const vector<string>& candidateWords)
 {
     map<char, int> answer;
@@ -71,6 +76,7 @@ map<char, int> countOccurrences(const vector<string>& candidateWords)
     Returns:
         answer (char) : The most frequent character
 ***/
+
 char findMostFrequentChar(const map<char, int>& occurrences, const set<char>& selectedChars)
 {
     char answer;
@@ -109,6 +115,7 @@ string getWordMask(char nextChar)
     cin >> mask;
     return mask;
 }
+
 /***
     Args:
         ch (char): The predicted character by the AI
@@ -116,6 +123,7 @@ string getWordMask(char nextChar)
     Returns:
         answer (bool) : return False if the predicted character is the wrong one, True otherwise
 ***/
+
 bool isCorrectChar(char ch, const string& mask)
 {
     bool answer;
@@ -134,9 +142,7 @@ bool isCorrectChar(char ch, const string& mask)
 ***/
 bool isWholeWord(const string& mask)
 {
-     bool answer;
     //Write your code here
-    return answer;
     for (char ch : mask){
         if (ch < 'a' || ch > 'z') return false;
     }
@@ -156,9 +162,7 @@ bool isWholeWord(const string& mask)
 ***/
 bool wordConformToMask(const string& word, const string& mask, char ch)
 {
-    bool answer;
     //Write your code here
-    return answer;
     for (int i = 0; i < mask.size(); ++i){
         if (ch == mask[i] && ch != word[i]) return false;
     }
@@ -186,5 +190,4 @@ vector<string> filterWordsByMask(const vector<string>& words, const string& mask
         answer.push_back(str);
     }
     return answer;
-}
 }
